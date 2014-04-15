@@ -17,8 +17,9 @@ Executes an action and returns the key-value based response from the server
 Example Usage:
 ==============
 	package main
-	
+
 	import (
+		"github.com/markose/amiConnect"
 		"fmt"
 		"log"
 		"sync"
@@ -27,10 +28,10 @@ Example Usage:
 	func main() {
 	
 		var err error
-		var a *AMIAdapter
+		var a *amiConnect.AMIAdapter
 		var events chan map[string]string
 	
-		a, err = NewAMIAdapter("127.0.0.1")
+		a, err = amiConnect.NewAMIAdapter("127.0.0.1")
 		if err != nil {
 			log.Fatalln(err)
 		}
@@ -63,9 +64,9 @@ Example Usage:
 		result := a.Exec(action)
 	
 		if result["Response"] == "Success" {
-			fmt.Println("SUCCESS: Set variable")
+			fmt.Printf("SUCCESS: Set variable")
 		} else if result["Response"] == "Error" {
-			fmt.Printf("ERROR: Set variable: %v\n", result["Message"])
+			fmt.Printf("ERROR: Set variable")
 		}
 	
 		var w sync.WaitGroup
