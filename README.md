@@ -1,6 +1,9 @@
 Description
 ===========
-The Adapter can be used to connect to the AMI interface of an (remote) Asterisk instance.
+* The adapter can be used to connect to the AMI interface of an (remote) Asterisk instance.
+* It does an automatic reconnect on TCP error.
+* AMI events will be parsed and returned as a structured map.
+* AMI actions can be executed and the server response is returned synchronously as a structured map.
 
 ## API
 
