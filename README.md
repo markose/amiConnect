@@ -4,14 +4,14 @@ The Adapter can be used to connect to the AMI interface of an (remote) Asterisk 
 
 ## API:
 
-*   NewAMIAdapter(ip string) (*AMIAdapter, error)
-**  Creates a new instance of the adapter
+*   **NewAMIAdapter(ip string) (*AMIAdapter, error)**
+	* Creates a new instance of the adapter
 
-*	Login(username string, password string) (chan map[string]string, error)
-**  Login to (remote) asterisk and returns a channel on which key-value based AMI events can be received
+*	**Login(username string, password string) (chan map[string]string, error)**
+	* Login to (remote) asterisk and returns a channel on which key-value based AMI events can be received
 
-*   Exec(action map[string]string) map[string]string
-**  Executes an action and returns the key-value based response from the server  
+*   **Exec(action map[string]string) map[string]string**
+	* Executes an action and returns the key-value based response from the server  
 
 Example Usage:
 ==============
@@ -20,7 +20,6 @@ import (
 	"fmt"
 	"github.com/markose/amiConnect"
 	"log"
-	"sync"
 )
 
 func main() {
@@ -66,9 +65,5 @@ func main() {
 	} else if result["Response"] == "Error" {
 		fmt.Printf("ERROR: Set variable")
 	}
-
-	var w sync.WaitGroup
-	w.Add(1)
-	w.Wait()
 }
 ```
