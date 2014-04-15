@@ -1,8 +1,8 @@
-Description:
-==============
+Description
+===========
 The Adapter can be used to connect to the AMI interface of an (remote) Asterisk instance.
 
-## API:
+## API
 
 *   **NewAMIAdapter(ip string) (*AMIAdapter, error)**
 	* Creates a new instance of the adapter
@@ -13,8 +13,8 @@ The Adapter can be used to connect to the AMI interface of an (remote) Asterisk 
 *   **Exec(action map[string]string) map[string]string**
 	* Executes an action and returns the key-value based response from the server  
 
-Example Usage:
-==============
+## Example Usage
+
 ```Go
 import (
 	"fmt"
